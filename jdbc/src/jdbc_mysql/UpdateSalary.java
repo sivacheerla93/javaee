@@ -1,20 +1,15 @@
-package jdbc;
+package jdbc_mysql;
 
 import java.sql.Connection;
 import java.sql.Statement;
-import java.util.Scanner;
 
-public class UpdateSalary2 {
+public class UpdateSalary {
 
 	public static void main(String[] args) {
 
-		try (Connection con = DBUtil.getConnection()) {
-			Scanner s = new Scanner(System.in);
-			System.out.print("Enter employee id :");
-			int empid = s.nextInt();
-
+		try (Connection con = DBUtilMySQL.getConnection()) {
 			Statement st = con.createStatement();
-			int count = st.executeUpdate("update employees set salary = salary * 1.1 where id = " + empid);
+			int count = st.executeUpdate("update employees set salary = salary * 1.1 where id = 1");
 			if (count == 1)
 				System.out.println("Updated Salary Successfully!");
 			else

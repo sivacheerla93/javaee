@@ -1,27 +1,20 @@
-package jdbc;
+package jdbc_oracle;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBUtil {
+public class DBUtilOracle {
 
 	public static Connection getConnection() throws Exception {
-		Class.forName("com.mysql.jdbc.Driver");
-
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "9866850403");
-
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr");
 		return con;
-
 	}
 
 	public static void main(String[] args) throws Exception {
-
-		Connection con = DBUtil.getConnection();
-
+		Connection con = DBUtilOracle.getConnection();
 		System.out.println("Connected!");
-
 		con.close();
-
 	}
 
 }
