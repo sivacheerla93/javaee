@@ -1,0 +1,21 @@
+.subhead {
+	font-family: aria;
+	color: gray
+}
+
+body {
+	font-family: verdana;
+	font-size: 11pt
+}
+
+h1 {
+	color: red
+}
+
+h2 {
+	color: maroon
+}
+
+li {
+	color: blue;
+}
