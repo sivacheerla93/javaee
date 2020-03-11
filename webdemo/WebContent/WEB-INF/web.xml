@@ -12,14 +12,13 @@
 		<servlet-class>servlets.NowServlet</servlet-class>
 		<init-param>
 			<param-name>company</param-name>
-			<param-value>Pragada Technologies</param-value>
+			<param-value>Srikanth Technologies</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>now</servlet-name>
 		<url-pattern>/date</url-pattern>
 	</servlet-mapping>
-
 	<welcome-file-list>
 		<welcome-file>course.html</welcome-file>
 	</welcome-file-list>
