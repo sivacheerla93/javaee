@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AddCookieServlet
+ * Servlet implementation class ListCookiesServlet
  */
-@WebServlet("/addcookie")
-public class AddCookieServlet extends HttpServlet {
+@WebServlet("/listcookies")
+public class ListCookiesServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -24,17 +24,16 @@ public class AddCookieServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String name = request.getParameter("cname");
-		String value = request.getParameter("cvalue");
-		String durable = request.getParameter("durable");
+		String st = "<body><h3>List of Cookies</h3>"
+				+ "<table border = '1' cellpadding = '5'> <tr><th>Name</th><th>Value</th></tr>";
 
-		Cookie c = new Cookie(name, value);
-		if (durable != null) {
-			c.setMaxAge(7 * 24 * 60 * 60);
-			response.addCookie(c);
-			out.println("<h3>Cookie is created</h3>");
-			out.close();
+		for (Cookie c : request.getCookies()) {
+			st = st + "<tr><td>" + c.getName() + "</td><td>" + c.getValue() + "</td></tr>";
 		}
+
+		st = st + "</table></body>";
+		out.println(st);
+		out.close();
 	}
 
 	/**
