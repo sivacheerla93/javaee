@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-// @WebServlet("/now")
-public class NowServlet extends HttpServlet {
+// @WebServlet("/datetime")
+public class DateTimeServlet extends HttpServlet {
 	int count = 0;
 
 	@Override
