@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	version="3.0">
-	<display-name>webdemo</display-name>
-	<session-config>
-		<session-timeout>5</session-timeout>
-	</session-config>
-	<servlet>
-		<servlet-name>DateTimeServlet</servlet-name>
-		<servlet-class>servlets.DateTimeServlet</servlet-class>
-		<init-param>
-			<param-name>company</param-name>
-			<param-value>Srikanth Technologies</param-value>
-		</init-param>
-	</servlet>
-	<servlet>
-		<servlet-name>InitParametersDemoServlet</servlet-name>
-		<servlet-class>servlets.InitParametersDemoServlet</servlet-class>
-		<init-param>
-			<param-name>title</param-name>
-			<param-value>Srikanth Technologies</param-value>
-		</init-param>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>DateTimeServlet</servlet-name>
-		<url-pattern>/datetime</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>InitParametersDemoServlet</servlet-name>
-		<url-pattern>/initparamsdemo</url-pattern>
-	</servlet-mapping>
-	<welcome-file-list>
-		<welcome-file>course.html</welcome-file>
-	</welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>webdemo</display-name>
+  <session-config>
+    <session-timeout>5</session-timeout>
+  </session-config>
+  <servlet>
+    <servlet-name>DateTimeServlet</servlet-name>
+    <servlet-class>servlets.DateTimeServlet</servlet-class>
+    <init-param>
+      <param-name>company</param-name>
+      <param-value>Srikanth Technologies</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>InitParametersDemoServlet</servlet-name>
+    <servlet-class>servlets.InitParametersDemoServlet</servlet-class>
+    <init-param>
+      <param-name>title</param-name>
+      <param-value>Srikanth Technologies</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DateTimeServlet</servlet-name>
+    <url-pattern>/datetime</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InitParametersDemoServlet</servlet-name>
+    <url-pattern>/initparamsdemo</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>course.html</welcome-file>
+  </welcome-file-list>
 </web-app>

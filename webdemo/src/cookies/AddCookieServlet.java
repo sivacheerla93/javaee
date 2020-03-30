@@ -1,4 +1,4 @@
-package servlets;
+package cookies;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ListCookiesServlet
+ * Servlet implementation class AddCookieServlet
  */
-@WebServlet("/listcookies")
-public class ListCookiesServlet extends HttpServlet {
+@WebServlet("/addcookie")
+public class AddCookieServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -24,16 +24,17 @@ public class ListCookiesServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String st = "<body><h3>List of Cookies</h3>"
-				+ "<table border = '1' cellpadding = '5'> <tr><th>Name</th><th>Value</th></tr>";
+		String name = request.getParameter("cname");
+		String value = request.getParameter("cvalue");
+		String durable = request.getParameter("durable");
 
-		for (Cookie c : request.getCookies()) {
-			st = st + "<tr><td>" + c.getName() + "</td><td>" + c.getValue() + "</td></tr>";
+		Cookie c = new Cookie(name, value);
+		if (durable != null) {
+			c.setMaxAge(7 * 24 * 60 * 60);
+			response.addCookie(c);
+			out.println("<h3>Cookie is created</h3>");
+			out.close();
 		}
-
-		st = st + "</table></body>";
-		out.println(st);
-		out.close();
 	}
 
 	/**
