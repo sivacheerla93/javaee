@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<catalolg>
+	<product>
+		<name>
+			IBM Server
+		</name>
+		<price>
+			150000
+		</price>
+	</product>
+	<product>
+		<name>
+			Dell Server
+		</name>
+		<price>
+			165000
+		</price>
+	</product>
+</catalolg>

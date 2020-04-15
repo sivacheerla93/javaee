@@ -14,17 +14,17 @@
 	<sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" var="con"
 		url="jdbc:oracle:thin:@localhost:1521:xe" user="hr" password="hr" />
 
-	<sql:query var="jobs" dataSource="${con}">
-        select * from jobs 
+	<sql:query var="emplist" dataSource="${con}">
+        select employee_id, first_name, salary from employees 
     </sql:query>
 
-	<h2>Jobs</h2>
+	<h2>Employees</h2>
 
-	<c:forEach items="${jobs.rows}" var="job">
-       ${job.job_title}
-       <br />
-	</c:forEach>
-
+	<ul>
+		<c:forEach items="${emplist.rows}" var="emp">
+			<li>${emp.employee_id },${emp.first_name },${emp.salary }</li>
+		</c:forEach>
+	</ul>
 
 </body>
 </html>

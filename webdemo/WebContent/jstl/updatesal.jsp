@@ -8,23 +8,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>List Of Jobs</title>
+<title>Core Tags</title>
 </head>
 <body>
 	<sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" var="con"
 		url="jdbc:oracle:thin:@localhost:1521:xe" user="hr" password="hr" />
 
-	<sql:query var="jobs" dataSource="${con}">
-        select * from jobs 
-    </sql:query>
+	<sql:update dataSource="${con}" var="count">
+     update employees set salary = ? where employee_id = ?
+     <sql:param value="${param.sal }" />
+		<sql:param value="${param.empno }" />
+	</sql:update>
 
-	<h2>Jobs</h2>
+	<c:if test="${count == 0}">
+     Sorry! No employee found!
+  </c:if>
 
-	<c:forEach items="${jobs.rows}" var="job">
-       ${job.job_title}
-       <br />
-	</c:forEach>
-
+	<c:if test="${count > 0}">
+     Updated Successfully!
+  </c:if>
 
 </body>
 </html>
