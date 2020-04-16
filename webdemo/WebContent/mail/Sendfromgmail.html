@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Send Mail</title>
+</head>
+<body>
+	<h2>Send Mail From Gmail</h2>
+	<form action="/webdemo/sendfromgmail" method="post">
+		To Address <br /> <input type="text" name="toaddress" />
+		<p />
+		From Address(Only Username) <br /> <input type="text"
+			name="fromaddress" />
+		<p />
+		From Password <br /> <input type="password" name="password" />
+		<p />
+		Subject <br /> <input type="text" name="subject" />
+		<p />
+		Body <br />
+		<textarea rows="5" cols="80" name="body"></textarea>
+		<p />
+		<input type="submit" value="Send Mail" />
+	</form>
+</body>
+</html>

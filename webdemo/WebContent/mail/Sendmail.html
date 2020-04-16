@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Send Mail</title>
+</head>
+<body>
+	<h2>Send Mail</h2>
+	<form action="/webdemo/sendmail" method="post">
+		To Address <br /> <input type="text" name="toaddress" />
+		<p />
+		From Address <br /> <input type="text" name="fromaddress" />
+		<p />
+		Subject <br /> <input type="text" name="subject" />
+		<p />
+		Body <br />
+		<textarea rows="5" cols="80" name="body"></textarea>
+		<p />
+		<input type="submit" value="Send Mail" />
+	</form>
+</body>
+</html>
