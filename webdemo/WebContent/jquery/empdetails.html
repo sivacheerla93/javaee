@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>AJAX and XML With jQuery</title>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+	function getEmployeeDetails() {
+		$.get("empdetails.jsp", {
+			empid : $("#empid").val()
+		}, displayResult)
+	}
+
+	function displayResult(data) {
+		if ($(data).find("error").text() != "") {
+			$("#empname").val("");
+			$("#empsal").val("");
+			alert("Error : " + $(data).find("error").text());
+		} else {
+			$("#empname").val($(data).find("name").text());
+			$("#empsal").val($(data).find("salary").text());
+		}
+	}
+</script>
+</head>
+<body>
+	<form id="form1">
+		<h2>Employee Details</h2>
+		<table>
+			<tr>
+				<td>Employee ID :</td>
+				<td><input type="text" onblur="getEmployeeDetails()" id="empid"
+					size="10" /> <input type="button" onclick="getEmployeeDetails()"
+					value="Get Details" />
+			</tr>
+			<tr>
+				<td>Employee Name :</td>
+				<td><input type="text" id="empname" readonly size="30" /></td>
+			</tr>
+			<tr>
+				<td>Salary :</td>
+				<td><input type="text" id="empsal" readonly size="30" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

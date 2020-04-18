@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>AJAX and JSON</title>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$.getJSON("https://api.github.com/users/srikanthpragada/repos",
+						{}, listRepos);
+			});
+
+	function listRepos(result) {
+		$.each(result, function(idx, repo) {
+			$("#repos").append(
+					"<li>" + repo.name + " - " + repo.description + "</li>");
+		}
+
+		);
+
+	}
+</script>
+</head>
+<body>
+	<h2>List Of Repos</h2>
+	<!-- 
+	  User : <input type="text" id="user" /> <button onclick="getrepos()">Get Repos</button>
+    -->
+
+	<ul id="repos">
+
+	</ul>
+
+</body>
+</html>
