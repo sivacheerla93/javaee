@@ -42,7 +42,8 @@
 	<!-- For SOAP web services start -->
 	<listener>
 		<listener-class>
-			com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+			com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+		</listener-class>
 	</listener>
 	<servlet>
 		<servlet-name>metro-servlet</servlet-name>

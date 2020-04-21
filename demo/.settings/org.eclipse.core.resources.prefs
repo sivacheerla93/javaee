@@ -1,4 +1,9 @@
 eclipse.preferences.version=1
+encoding//src/ws/Employee.java=UTF-8
+encoding//src/ws/EmployeeServicePortBindingStub.java=UTF-8
+encoding//src/ws/EmployeeService_PortType.java=UTF-8
+encoding//src/ws/EmployeeService_Service.java=UTF-8
+encoding//src/ws/EmployeeService_ServiceLocator.java=UTF-8
 encoding//src/ws/HelloService.java=UTF-8
 encoding//src/ws/HelloServicePortBindingStub.java=UTF-8
 encoding//src/ws/HelloServiceService.java=UTF-8
