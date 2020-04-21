@@ -10,8 +10,6 @@
 	});
 
 	function displayJobs(data) {
-		console.log(data);
-
 		$.each(data, function(index, job) {
 			$("#jobs").append(
 					"<option value = '" + job.id + "'>" + job.title
@@ -26,7 +24,7 @@
 		}, displayEmployees);
 	}
 
-	function displayEmployees() {
+	function displayEmployees(data) {
 		$.each(data, function(index, name) {
 			$("#employees").append("<option>" + name + "</option>")
 		});
