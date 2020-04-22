@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Books Client</title>
+<script type="text/javascript" src="../jquery/jquery.js"></script>
+<script type="text/javascript">
+	function getBooks() {
+		$
+				.getJSON("http://localhost:8888/webdemo/rest/books", {},
+						displayResult);
+	}
+
+	function displayResult(data) {
+		if (data.length == 0) {
+			$("#error").html("Sorry! No Books found!");
+			$("#books").html("");
+			return;
+		}
+
+		$("#error").html("");
+		var out = '';
+		for (var i = 0; i < data.length; i++) {
+			out += '<li>' + data[i].title + ' - ' + data[i].price + "</li>";
+		}
+		$("#books").html(out);
+	}
+
+	getBooks();
+</script>
+</head>
+<body>
+	<h2>Books List</h2>
+
+	<ul id="books"></ul>
+	<div style="color: red; font-weight: bold;" id="error"></div>
+</body>
+</html>
