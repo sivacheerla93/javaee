@@ -1,0 +1,16 @@
+<html>
+<script src="../jquery/jquery.js"></script>
+<script type="text/javascript">
+	function callRest() {
+		$.get("http://localhost:8888/webdemo/rest/hello/Siva Cheerla", {},
+				doUpdate);
+	}
+
+	function doUpdate(result) {
+		alert(result);
+	}
+</script>
+<body>
+	<input type="button" onclick="callRest()" value="Call Rest Hello" />
+</body>
+</html>

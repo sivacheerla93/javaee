@@ -1,0 +1,20 @@
+<html>
+<script src="../jquery/jquery.js"></script>
+<script type="text/javascript">
+	function getDetails() {
+		$.getJSON("http://localhost:8888/webdemo/rest/jobs/"
+				+ $("#jobid").val(), {}, doUpdate);
+	}
+
+	function doUpdate(job) {
+		$("#details").text(job.title + " " + job.minSalary);
+	}
+</script>
+<body>
+	Job Id :
+	<input type="text" id="jobid" />
+	<input type="button" onclick="getDetails()" value="Get Details" />
+	<p />
+	<h2 id="details"></h2>
+</body>
+</html>

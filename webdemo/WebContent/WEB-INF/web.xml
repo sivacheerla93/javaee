@@ -39,6 +39,7 @@
 		<welcome-file>course.html</welcome-file>
 	</welcome-file-list>
 
+
 	<!-- For SOAP web services start -->
 	<listener>
 		<listener-class>
@@ -55,4 +56,21 @@
 		<url-pattern>/services/*</url-pattern>
 	</servlet-mapping>
 	<!-- For SOAP web services end -->
+
+
+	<!-- For REST web services start -->
+	<servlet>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>rest</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	<!-- For REST web services end -->
 </web-app>
