@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+<title>Interest Calculation</title>
+</head>
+<body>
+	<h1>Interest Calculation</h1>
+
+	<h:form id="interestForm" prependId="false">
+      Amount : <h:inputText p:title="Amount" p:placeholder="amount"
+			p:type="number" p:required="required" id="amount"
+			value="#{interestBean.amount}"
+			validatorMessage="Invalid Amount. Please enter amount >= 1000">
+			<f:validateDoubleRange minimum="1000">
+			</f:validateDoubleRange>
+		</h:inputText>
+		<h:message for="amount"></h:message>
+		<p />
+               
+      Int. Rate : <h:inputText p:title="Interest Rate" p:type="number"
+			p:required="required" p:min="1" p:max="100" id="rate"
+			value="#{interestBean.rate}"></h:inputText>
+
+		<p />
+		<h:commandButton value="Calculate"
+			actionListener="#{interestBean.calculate}"></h:commandButton>
+		<p />
+
+		<h3>
+			<h:outputText rendered="#{interestBean.interest > 0}"
+				value="#{interestBean.interest}"></h:outputText>
+		</h3>
+
+	</h:form>
+</body>
+</html>
