@@ -6,11 +6,11 @@
 
 	<display-name>webdemo</display-name>
 
-	<session-config>
+	<!-- <session-config>
 		<session-timeout>5</session-timeout>
-	</session-config>
+	</session-config> -->
 
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>DateTimeServlet</servlet-name>
 		<servlet-class>servlets.DateTimeServlet</servlet-class>
 		<init-param>
@@ -21,9 +21,9 @@
 	<servlet-mapping>
 		<servlet-name>DateTimeServlet</servlet-name>
 		<url-pattern>/datetime</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>InitParametersDemoServlet</servlet-name>
 		<servlet-class>servlets.InitParametersDemoServlet</servlet-class>
 		<init-param>
@@ -34,14 +34,14 @@
 	<servlet-mapping>
 		<servlet-name>InitParametersDemoServlet</servlet-name>
 		<url-pattern>/initparamsdemo</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 	<welcome-file-list>
 		<welcome-file>course.html</welcome-file>
 	</welcome-file-list>
 
 
 	<!-- For SOAP web services start -->
-	<listener>
+	<!-- <listener>
 		<listener-class>
 			com.sun.xml.ws.transport.http.servlet.WSServletContextListener
 		</listener-class>
@@ -54,12 +54,12 @@
 	<servlet-mapping>
 		<servlet-name>metro-servlet</servlet-name>
 		<url-pattern>/services/*</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 	<!-- For SOAP web services end -->
 
 
 	<!-- For REST web services start -->
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>Jersey REST Service</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
 		<init-param>
@@ -71,6 +71,19 @@
 	<servlet-mapping>
 		<servlet-name>Jersey REST Service</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 	<!-- For REST web services end -->
+	
+	
+	<!-- For Java Server Faces starts here -->
+	<servlet>
+		<servlet-name>JSF</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>JSF</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+	<!-- For Java Server Faces ends here -->
 </web-app>
