@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf.passthrough">
+
+<h:head>
+	<title>Pass-through Attributes</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h2>User Registration</h2>
+		FullName :
+		<h:inputText value="#{personBean.name}" p:placeholder="Fullname"
+			p:required="required"></h:inputText>
+		<p />
+		Email :
+		<h:inputText value="#{personBean.email}" p:placeholder="Email Address"
+			p:required="required" p:type="email"></h:inputText>
+		<p />
+		Mobile :
+		<h:inputText value="#{personBean.mobile}"
+			title="10 digits mobile number" p:pattern="^[0-9]{10}$"
+			p:required="required"></h:inputText>
+		<p />
+		Age :
+		<h:inputText value="#{personBean.age}">
+			<f:passThroughAttribute name="min" value="10"></f:passThroughAttribute>
+			<f:passThroughAttribute name="type" value="range"></f:passThroughAttribute>
+		</h:inputText>
+		<p />
+		<h:commandButton value="Submit"></h:commandButton>
+	</h:form>
+</h:body>
+</html>

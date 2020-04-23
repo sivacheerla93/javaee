@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Books</title>
+</h:head>
+<h:body>
+	<h:form id="form1">
+		<h2>Books Catalog</h2>
+		<table cellpadding="5px" border="2">
+			<tr>
+				<td>Select Category :</td>
+				<td><h:selectOneRadio onclick="submit()" id="category"
+						value="#{booksBean.category}"
+						valueChangeListener="#{booksBean.process}">
+						<f:selectItem itemLabel="Java Books" itemValue="java"></f:selectItem>
+						<f:selectItem itemLabel="MS .NET Books" itemValue=".net"></f:selectItem>
+					</h:selectOneRadio></td>
+			</tr>
+			<tr>
+				<td>Select A Book :</td>
+				<td><h:selectOneMenu id="javabooks"
+						rendered='#{booksBean.category == "java"}'
+						valueChangeListener="#{booksBean.calculatePrice}"
+						onchange="submit()">
+						<f:selectItem itemLabel="Thinking in Java" itemValue="500"></f:selectItem>
+						<f:selectItem itemLabel="JSF In Action" itemValue="450"></f:selectItem>
+						<f:selectItem itemLabel="Struts 2 In Action" itemValue="550"></f:selectItem>
+					</h:selectOneMenu></td>
+
+				<td><h:selectOneMenu id="dotnetbooks"
+						rendered='#{booksBean.category == ".net"}'
+						valueChangeListener="#{booksBean.calculatePrice}"
+						onchange="submit()">
+						<f:selectItem itemLabel="C# Comp Ref." itemValue="400"></f:selectItem>
+						<f:selectItem itemLabel="ASP .NET 4.0" itemValue="700"></f:selectItem>
+						<f:selectItem itemLabel="LINQ in Action" itemValue="500"></f:selectItem>
+					</h:selectOneMenu></td>
+			</tr>
+			<tr style="text-align: center; font-weight: 700;">
+				<td colspan="2"><h:outputText
+						rendered='#{booksBean.price != ""}'
+						value="Price : #{booksBean.price}"></h:outputText></td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+
+</html>

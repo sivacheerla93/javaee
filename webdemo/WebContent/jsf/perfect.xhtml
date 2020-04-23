@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Perfect Number</title>
+</h:head>
+
+<h:body>
+	<h1>Perfect Number</h1>
+	<h:form id="form1">
+		Enter a number :
+		<h:inputText id="number" value="#{perfectBean.number}" required="true"
+			requiredMessage="Please enter a number!"
+			validatorMessage="Number must be between 1 and 100">
+			<f:validateLongRange minimum="1" maximum="100"></f:validateLongRange>
+		</h:inputText>
+		<h:message for="number" id="error"></h:message>
+		<p />
+		<h:commandButton value="submit" actionListener="#{perfectBean.check}"
+			type="submit"></h:commandButton>
+		<p />
+		<h3>#{perfectBean.message}</h3>
+	</h:form>
+</h:body>
+</html>
