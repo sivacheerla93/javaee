@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Jobs</title>
+	<style>
+.head {
+	color: white;
+	background-color: red;
+	font-family: arial;
+	font-size: 20pt;
+	font-weight: 700
+}
+
+.colhead {
+	color: white;
+	background-color: gray;
+	font-family: verdana;
+	font-size: 12pt;
+	font-weight: 700
+}
+
+.foot {
+	color: white;
+	background-color: blue;
+	font-family: arial;
+	font-size: 14pt;
+	font-weight: 700
+}
+
+.oddrow {
+	background-color: silver;
+}
+
+.evenrow {
+	background-color: white;
+}
+
+.rows {
+	font-family: verdana;
+}
+
+.rightjustify {
+	text-align: right;
+}
+
+.leftjustify {
+	text-align: left;
+}
+</style>
+</h:head>
+<h:body>
+	<h:form>
+		<h:dataTable value="#{jobsBean.jobs}" var="job" border="1"
+			footerClass="foot" captionClass="head"
+			columnClasses="leftjustify, rightjustify" styleClass="rows"
+			headerClass="colhead" rowClasses="evenrow, oddrow">
+			<h:column>
+				<f:facet name="header">Job Title</f:facet>
+					#{job.job_title}
+				</h:column>
+
+			<h:column>
+				<f:facet name="header">Min Salary</f:facet>
+					#{job.min_salary}
+				</h:column>
+
+			<h:column>
+				<f:facet name="header">Max Salary</f:facet>
+					#{job.max_salary}
+				</h:column>
+
+			<f:facet name="caption" class="head">Jobs List</f:facet>
+			<f:facet name="footer" class="foot">
+				<center>Total Number of Jobs : #{jobsBean.count}</center>
+			</f:facet>
+		</h:dataTable>
+	</h:form>
+</h:body>
+
+</html>

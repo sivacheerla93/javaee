@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ul>
+	<ui:repeat var="person" value="#{personsBean.persons}" offset="2"
+		size="4">
+		<li>#{person.name} : #{person.age} #{person.age lt 30 ? "Young" :
+			"Middle Aged"} <ui:fragment rendered="#{person.name.length() > 15}">
+				Big Name
+			</ui:fragment>
+		</li>
+	</ui:repeat>
+</ul>
+
+</html>
