@@ -1,0 +1,22 @@
+.main {
+	background-color: red;
+}
+
+.links {
+	background-color: white;
+}
+
+.head {
+	background-color: yellow;
+	font-size: 20pt;
+	font-weight: 700;
+}
+
+.title {
+	font-size: 16pt;
+	font-weight: 700;
+}
+
+body {
+	background-color: silver;
+}
